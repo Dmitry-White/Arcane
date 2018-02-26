@@ -7,9 +7,9 @@ import ResultCards from '../../components/ResultCards/ResultCards'
 class Menu extends Component {
     state = {
         birthdate: {
-            day: 00,
-            month: 00,
-            year: 0000
+            day: 0,
+            month: 0,
+            year: 0
         }
     }
     render() {
