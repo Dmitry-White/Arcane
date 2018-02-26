@@ -1,0 +1,10 @@
+.Container {
+    margin: 40px 0 20px 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.Date {
+    margin-right: 10px;
+}

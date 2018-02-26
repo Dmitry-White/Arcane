@@ -1,0 +1,13 @@
+.Card {
+    max-width: 300px;
+    margin: 10px 30px;
+}
+
+.Media {
+    height: 194px;
+}
+
+.Actions {
+    display: flex;
+}
+
