@@ -9,25 +9,29 @@ import IconButton from 'material-ui/IconButton';
 import Typography from 'material-ui/Typography';
 import ExpandMoreIcon from 'material-ui-icons/ExpandMore';
 
+
 const resultCard = props => {
+    const link = cards[props.cardNum].image;
+    console.log(link)
+    console.log("../../../assets/images/11.Strength.jpg")
     return (
         <Card className={classes.Card}>
             <CardHeader
                 avatar={
                     <Avatar aria-label="Recipe" className={classes.avatar}>
-                        4
+                        {props.cardNum}
                     </Avatar>
                 }
-                title={cards["4"].title}
-                subheader={cards["4"].personType}
+                title={cards[props.cardNum].title}
+                subheader={cards[props.cardNum].personType}
             />
             <CardMedia
                 className={classes.Media}
-                image={require("../../../assets/images/4.Emperor.png")}
+                image={require("../../../assets/images/4_Emperor.jpg")}
             />   
             <CardContent>
                 <Typography component="p">
-                    {cards["4"].shortDesc}
+                    {cards[props.cardNum].shortDesc}
                 </Typography>
             </CardContent>
             <CardActions className={classes.Actions} disableActionSpacing>
@@ -40,11 +44,8 @@ const resultCard = props => {
             </CardActions>
             <Collapse in={true} timeout="auto" unmountOnExit>
                 <CardContent>
-                    <Typography paragraph variant="body2">
-                        Method:
-                    </Typography>
                     <Typography paragraph>
-                        {cards["4"].fullDesc}
+                        {cards[props.cardNum].fullDesc}
                     </Typography>
                 </CardContent>
             </Collapse>
