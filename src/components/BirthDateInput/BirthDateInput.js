@@ -13,6 +13,7 @@ const birthDateInput = props => {
                     label="Birthday"
                     type="date"
                     defaultValue="yyyy-mm-dd"
+                    error={props.dateError}
                     className={classes.TextField}
                     InputLabelProps={{
                         shrink: true,
@@ -20,7 +21,7 @@ const birthDateInput = props => {
                     onChange={props.getDate}
                 />
             </form>
-            <Button variant="raised" className={classes.button} onClick={props.showResults}>
+            <Button variant="raised" onClick={props.showResults}>
                 Result
             </Button>
         </div>

@@ -1,19 +1,26 @@
 import React, { Component } from 'react';
 
+import Grid from 'material-ui/Grid';
+
+import classes from './Menu.module.css';
+
 import BirthDateInput from '../../components/BirthDateInput/BirthDateInput';
+import LanguageButton from '../../components/LanguageButton/LanguageButton'
 import ResultCards from '../../components/ResultCards/ResultCards'
 
 class Menu extends Component {
     state = {
+        language: "english",
         birthdate: {
             day: "dd",
             month: "mm",
             year: "yyyy"
         },
+        dateError: false,
         computable: false,
-        arcane_1: null,
-        arcane_2: null,
-        arcane_3: null
+        arcana_1: null,
+        arcana_2: null,
+        arcana_3: null
     };
 
     getDateHandler = event => {
@@ -25,7 +32,8 @@ class Menu extends Component {
                 year: newYear,
                 month: newMonth,
                 day: newDay,
-            }
+            },
+            dateError: false
         })
     };
 
@@ -34,26 +42,26 @@ class Menu extends Component {
         const month = Number(this.state.birthdate.month);
         const year = Number(this.state.birthdate.year);
         if (!(isNaN(day) || isNaN(month) || isNaN(year))) {
-            const firstArcane = this.computeFirstArcane(day);
-            const secondArcane = this.computeSecondArcane(day, month, year);
-            const thirdArcane = this.computeThirdArcane(day, month, year);
+            const firstArcana = this.computeFirstArcana(day);
+            const secondArcana = this.computeSecondArcana(day, month, year);
+            const thirdArcana = this.computeThirdArcana(day, month, year);
             this.setState({
                 computable: true,
-                arcane_1: firstArcane,
-                arcane_2: secondArcane,
-                arcane_3: thirdArcane
+                arcana_1: firstArcana,
+                arcana_2: secondArcana,
+                arcana_3: thirdArcana
             })
-        } else alert("Invalid Date!");
+        } else this.setState({dateError: true});
     };
 
-    computeFirstArcane = day => {
+    computeFirstArcana = day => {
         if (day > 22) {
             return day - 22;
         } else return day;
     };
 
 
-    computeSecondArcane = (day, month, year) => {
+    computeSecondArcana = (day, month, year) => {
         let sum = 0;
         const daySum = this.sumOfDigits(day);
         const monthSum = this.sumOfDigits(month);
@@ -65,7 +73,7 @@ class Menu extends Component {
     };
 
     
-    computeThirdArcane = (day, month, year) => {
+    computeThirdArcana = (day, month, year) => {
         let sum = 0;
         let daySum = this.sumOfDigits(day);
         let monthSum = this.sumOfDigits(month);
@@ -95,19 +103,45 @@ class Menu extends Component {
         return num;
     };
 
+    languageChangeHadler = event => {
+        this.setState({language: event.target.value});
+    };
+
     render() {
         return (
             <>
-                <BirthDateInput 
-                    getDate={this.getDateHandler}
-                    showResults={this.showResultsHander}
-                />
+                <div className={classes.Menu}>
+                    <Grid 
+                        container
+                        spacing={24}
+                        alignItems="center"
+                        justify="space-around"
+                    >
+                        <Grid item xs>
+                        </Grid>
+                        <Grid item xs>
+                            <BirthDateInput 
+                                getDate={this.getDateHandler}
+                                dateError={this.state.dateError}
+                                showResults={this.showResultsHander}
+                                language={this.state.language}
+                                languageChange={this.languageChangeHadler}
+                            />
+                        </Grid>
+                        <Grid item xs>
+                            <LanguageButton 
+                                language={this.state.language}
+                                languageChange={this.languageChangeHadler}
+                            />      
+                        </Grid>
+                    </Grid>
+                </div>
                 <ResultCards 
                     computable={this.state.computable}
                     images={this.props.images}
-                    firstArcane={this.state.arcane_1}
-                    secondArcane={this.state.arcane_2}
-                    thirdArcane={this.state.arcane_3}
+                    firstArcana={this.state.arcana_1}
+                    secondArcana={this.state.arcana_2}
+                    thirdArcana={this.state.arcana_3}
                 />
             </>
         )

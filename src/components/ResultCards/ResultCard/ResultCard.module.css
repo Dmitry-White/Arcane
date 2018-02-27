@@ -1,13 +1,12 @@
 .Card {
     width: 300px;
-    margin: 10px 30px;
+    margin: 0 30px;
 }
 
 .Media {
-    height: 300px;
+    height: 350px;
 }
 
 .Actions {
     display: flex;
 }
-
