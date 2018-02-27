@@ -27,7 +27,7 @@ const resultCard = props => {
             />   
             <CardContent>
                 <Typography component="p">
-                    {props.shortDesck}
+                    {props.shortDesc}
                 </Typography>
             </CardContent>
             <CardActions className={classes.Actions} disableActionSpacing>
@@ -38,7 +38,7 @@ const resultCard = props => {
                     <ExpandMoreIcon />
                 </IconButton>
             </CardActions>
-            <Collapse in={true} timeout="auto" unmountOnExit>
+            <Collapse in={false} timeout="auto" unmountOnExit>
                 <CardContent>
                     <Typography paragraph>
                         {props.fullDesc}

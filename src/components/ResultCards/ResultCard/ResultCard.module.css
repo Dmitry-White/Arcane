@@ -1,10 +1,10 @@
 .Card {
-    max-width: 300px;
+    width: 300px;
     margin: 10px 30px;
 }
 
 .Media {
-    height: 200px;
+    height: 300px;
 }
 
 .Actions {
