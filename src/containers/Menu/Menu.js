@@ -35,7 +35,6 @@ class Menu extends Component {
         const year = Number(this.state.birthdate.year);
         if (!(isNaN(day) || isNaN(month) || isNaN(year))) {
             console.log("Valid Date");
-            console.log("BD: ", day, month, year);
             const firstArcane = this.computeFirstArcane(day);
             const secondArcane = this.computeSecondArcane(day, month, year);
             const thirdArcane = this.computeThirdArcane(day, month, year);
@@ -48,7 +47,6 @@ class Menu extends Component {
         } else {
             console.log("Invalid Date!");
         }
-        console.log("Results: ", this.state.arcane_1, this.state.arcane_2, this.state.arcane_3);
     };
 
     computeFirstArcane = day => {
@@ -111,6 +109,7 @@ class Menu extends Component {
                 />
                 <ResultCards 
                     computable={this.state.computable}
+                    images={this.props.images}
                     firstArcane={this.state.arcane_1}
                     secondArcane={this.state.arcane_2}
                     thirdArcane={this.state.arcane_3}

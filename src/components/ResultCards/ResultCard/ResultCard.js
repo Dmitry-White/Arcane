@@ -1,6 +1,5 @@
 import React from 'react';
 import classes from './ResultCard.module.css';
-import cards from '../../../assets/cards.json'
 
 import Card, { CardHeader, CardMedia, CardContent, CardActions } from 'material-ui/Card';
 import Collapse from 'material-ui/transitions/Collapse';
@@ -11,9 +10,6 @@ import ExpandMoreIcon from 'material-ui-icons/ExpandMore';
 
 
 const resultCard = props => {
-    const link = cards[props.cardNum].image;
-    console.log(link)
-    console.log("../../../assets/images/11.Strength.jpg")
     return (
         <Card className={classes.Card}>
             <CardHeader
@@ -22,16 +18,16 @@ const resultCard = props => {
                         {props.cardNum}
                     </Avatar>
                 }
-                title={cards[props.cardNum].title}
-                subheader={cards[props.cardNum].personType}
+                title={props.title}
+                subheader={props.personType}
             />
             <CardMedia
                 className={classes.Media}
-                image={require("../../../assets/images/4_Emperor.jpg")}
+                image={props.image}
             />   
             <CardContent>
                 <Typography component="p">
-                    {cards[props.cardNum].shortDesc}
+                    {props.shortDesck}
                 </Typography>
             </CardContent>
             <CardActions className={classes.Actions} disableActionSpacing>
@@ -45,7 +41,7 @@ const resultCard = props => {
             <Collapse in={true} timeout="auto" unmountOnExit>
                 <CardContent>
                     <Typography paragraph>
-                        {cards[props.cardNum].fullDesc}
+                        {props.fullDesc}
                     </Typography>
                 </CardContent>
             </Collapse>
