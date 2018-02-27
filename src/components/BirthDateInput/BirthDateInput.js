@@ -12,7 +12,7 @@ const birthDateInput = props => {
                     id="date"
                     label="Birthday"
                     type="date"
-                    defaultValue={props.birthdate.year + "-" + props.birthdate.month+ "-" + props.birthdate.day}
+                    defaultValue="yyyy-mm-dd"
                     className={classes.TextField}
                     InputLabelProps={{
                         shrink: true,

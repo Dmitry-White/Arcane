@@ -34,7 +34,6 @@ class Menu extends Component {
         const month = Number(this.state.birthdate.month);
         const year = Number(this.state.birthdate.year);
         if (!(isNaN(day) || isNaN(month) || isNaN(year))) {
-            console.log("Valid Date");
             const firstArcane = this.computeFirstArcane(day);
             const secondArcane = this.computeSecondArcane(day, month, year);
             const thirdArcane = this.computeThirdArcane(day, month, year);
@@ -44,9 +43,7 @@ class Menu extends Component {
                 arcane_2: secondArcane,
                 arcane_3: thirdArcane
             })
-        } else {
-            console.log("Invalid Date!");
-        }
+        } else alert("Invalid Date!");
     };
 
     computeFirstArcane = day => {
@@ -58,14 +55,13 @@ class Menu extends Component {
 
     computeSecondArcane = (day, month, year) => {
         let sum = 0;
-        let daySum = this.sumOfDigits(day);
-        let monthSum = this.sumOfDigits(month);
-        let yearSum = this.sumOfDigits(year);
+        const daySum = this.sumOfDigits(day);
+        const monthSum = this.sumOfDigits(month);
+        const yearSum = this.sumOfDigits(year);
         sum = daySum + monthSum + yearSum;
         if (sum > 22){
-            sum -= 22;
-        }
-        return sum;
+            return sum - 22;
+        } else return sum;
     };
 
     
@@ -74,20 +70,13 @@ class Menu extends Component {
         let daySum = this.sumOfDigits(day);
         let monthSum = this.sumOfDigits(month);
         let yearSum = this.sumOfDigits(year);
-        while (daySum > 9) {
-            daySum = this.sumOfDigits(daySum);
-        }
-        while (monthSum > 9) {
-            monthSum = this.sumOfDigits(monthSum);
-        }
-        while (yearSum > 9) {
-            yearSum = this.sumOfDigits(yearSum);
-        }
+        daySum = this.moreThanNine(daySum);
+        monthSum = this.moreThanNine(monthSum);
+        yearSum = this.moreThanNine(yearSum);
         sum = daySum + monthSum + yearSum;
         if (sum > 22) {
-            sum = this.sumOfDigits(sum);
-        }
-        return sum;
+            return this.sumOfDigits(sum);
+        } else return sum;
     };
 
     sumOfDigits = num => {
@@ -99,11 +88,17 @@ class Menu extends Component {
         return sum;
     };
 
+    moreThanNine = num => {
+        while (num > 9) {
+            num = this.sumOfDigits(num);
+        }
+        return num;
+    };
+
     render() {
         return (
             <>
                 <BirthDateInput 
-                    birthdate={this.state.birthdate} 
                     getDate={this.getDateHandler}
                     showResults={this.showResultsHander}
                 />
