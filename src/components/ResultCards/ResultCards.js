@@ -12,7 +12,7 @@ const resultCards = props => {
                 <ResultCard 
                     cardNum={props.firstArcane}
                     title={cardsInfo[props.firstArcane].title}
-                    image={props.images[cardsInfo[props.firstArcane].title]}
+                    image={props.images[cardsInfo[props.firstArcane].id]}
                     personType={cardsInfo[props.firstArcane].personType}
                     shortDesc={cardsInfo[props.firstArcane].shortDesc}
                     fullDesc={cardsInfo[props.firstArcane].fullDesc}
@@ -20,7 +20,7 @@ const resultCards = props => {
                 <ResultCard 
                     cardNum={props.secondArcane}
                     title={cardsInfo[props.secondArcane].title}
-                    image={props.images[cardsInfo[props.secondArcane].title]}
+                    image={props.images[cardsInfo[props.secondArcane].id]}
                     personType={cardsInfo[props.secondArcane].personType}
                     shortDesc={cardsInfo[props.secondArcane].shortDesc}
                     fullDesc={cardsInfo[props.secondArcane].fullDesc}
@@ -28,7 +28,7 @@ const resultCards = props => {
                 <ResultCard 
                     cardNum={props.thirdArcane}
                     title={cardsInfo[props.thirdArcane].title}
-                    image={props.images[cardsInfo[props.thirdArcane].title]}
+                    image={props.images[cardsInfo[props.thirdArcane].id]}
                     personType={cardsInfo[props.thirdArcane].personType}
                     shortDesc={cardsInfo[props.thirdArcane].shortDesc}
                     fullDesc={cardsInfo[props.thirdArcane].fullDesc}
