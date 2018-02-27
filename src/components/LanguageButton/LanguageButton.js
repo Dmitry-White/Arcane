@@ -17,10 +17,20 @@ class LanguageButton extends Component {
         this.setState({ open: true });
     };
     render() {
+        let engText, rusText, langText;
+        if (this.props.language === "eng") {
+            langText = "Language"
+            engText = "English";
+            rusText = "Russian";
+        } else {
+            langText = "Язык"
+            engText = "Английский";
+            rusText = "Русский";
+        }
         return (
             <form autoComplete="off">
                 <FormControl>
-                    <InputLabel htmlFor="controlled-open-select">Language</InputLabel>
+                    <InputLabel htmlFor="controlled-open-select">{langText}</InputLabel>
                     <Select
                         open={this.state.open}
                         onClose={this.handleClose}
@@ -28,8 +38,8 @@ class LanguageButton extends Component {
                         value={this.props.language}
                         onChange={this.props.languageChange}
                     >
-                        <MenuItem value="english">English</MenuItem>
-                        <MenuItem value="russian">Russian</MenuItem>
+                        <MenuItem value="eng">{engText}</MenuItem>
+                        <MenuItem value="rus">{rusText}</MenuItem>
                     </Select>
                 </FormControl>
             </form>

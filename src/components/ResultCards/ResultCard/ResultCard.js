@@ -5,15 +5,22 @@ import Card, { CardHeader, CardMedia, CardContent } from 'material-ui/Card';
 import Avatar from 'material-ui/Avatar';
 import Typography from 'material-ui/Typography';
 
+const eng_firstArcana = "This is a person's face, the most outstanding qualities. Main character traits, behavior, interests.";
+const eng_secondArcana = "This is a person's program, his mission and way though life. Speaks of his morality, karma and inner self.";
+const eng_thirdArcana = "This is a person's feature, additional quality of his mind. May shadow or twist first two cards sometimes.";
+
+const rus_firstArcana = "Это лицо человека, самые заметные качества. Основные черты характера, поведение, интересы.";
+const rus_secondArcana = "Это программа человека, его миссия и жизненный путь. Говорит о морали человека, карме и развитии души";
+const rus_thirdArcana = "Это сущность человека, дополнительная особенность его разума. Иногда может затемнять или извращать первые две карты.";
 
 const resultCard = props => {
     let cardDesc = null;
     if (props.cardType === "first") {
-        cardDesc = "This is a person's face, the most outstanding qualities. Main character traits, behavior, interests."
+        props.language === "eng" ? cardDesc = eng_firstArcana : cardDesc = rus_firstArcana;
     } else if (props.cardType === "second") {
-        cardDesc = "This is a person's program, his mission and way though life. Speaks of his morality, karma and inner self."
+        props.language === "eng" ? cardDesc = eng_secondArcana : cardDesc = rus_secondArcana;
     } else if (props.cardType === "third") {
-        cardDesc = "This is a person's feature, additional quality of his mind. May shadow or twist first two cards sometimes."
+        props.language === "eng" ? cardDesc = eng_thirdArcana : cardDesc = rus_thirdArcana;
     };
     return (
         <Card className={classes.Card}>
@@ -31,7 +38,7 @@ const resultCard = props => {
                 image={props.image}
             />   
             <CardContent>
-                <Typography component="p">
+                <Typography component="p" align="justify">
                     {cardDesc}
                 </Typography>
             </CardContent>

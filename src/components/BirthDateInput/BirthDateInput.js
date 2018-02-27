@@ -5,13 +5,21 @@ import TextField from 'material-ui/TextField';
 import Button from 'material-ui/Button';
 
 const birthDateInput = props => {
+    let labelText, buttonText;
+    if(props.language === "eng") {
+        labelText = "Birthday";
+        buttonText = "Result"
+    } else {
+        labelText = "Дата рождения";
+        buttonText = "Результат"
+    }
     return (
         <div className={classes.Container}>
             <form className={classes.Date} noValidate>
                 <TextField
                     id="date"
-                    label="Birthday"
                     type="date"
+                    label={labelText}
                     defaultValue="yyyy-mm-dd"
                     error={props.dateError}
                     className={classes.TextField}
@@ -22,7 +30,7 @@ const birthDateInput = props => {
                 />
             </form>
             <Button variant="raised" onClick={props.showResults}>
-                Result
+                {buttonText}
             </Button>
         </div>
     )

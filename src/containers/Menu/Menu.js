@@ -10,7 +10,7 @@ import ResultCards from '../../components/ResultCards/ResultCards'
 
 class Menu extends Component {
     state = {
-        language: "english",
+        language: "eng",
         birthdate: {
             day: "dd",
             month: "mm",
@@ -136,9 +136,11 @@ class Menu extends Component {
                         </Grid>
                     </Grid>
                 </div>
-                <ResultCards 
+                <ResultCards
+                    language={this.state.language} 
                     computable={this.state.computable}
                     images={this.props.images}
+                    cardsInfo={this.props.jsons[this.state.language]}
                     firstArcana={this.state.arcana_1}
                     secondArcana={this.state.arcana_2}
                     thirdArcana={this.state.arcana_3}
