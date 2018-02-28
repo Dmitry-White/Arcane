@@ -124,7 +124,7 @@ class Menu extends Component {
                         alignItems="center"
                         justify="space-around"
                     >
-                        <Grid item xs>
+                        <Grid item xs className={classes.Hidden}>
                         </Grid>
                         <Grid item xs>
                             <BirthDateInput 

@@ -1,0 +1,25 @@
+@media (max-width:920px) {
+    .Lang {
+        position: relative;
+        top: -24px;
+    }
+}
+
+
+@media (max-width:420px){
+    .Lang {
+        left: -20px;
+    }
+}
+
+@media (max-width:330px) {
+    .Lang {
+        left: 0;
+    }
+}
+
+@media (max-width:300px) {
+    .Lang {
+        top: 0;
+    }
+}

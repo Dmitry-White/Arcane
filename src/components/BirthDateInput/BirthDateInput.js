@@ -1,4 +1,6 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
+
 import classes from './BirthDateInput.module.css';
 
 import TextField from 'material-ui/TextField';
@@ -29,9 +31,18 @@ const birthDateInput = props => {
                     onChange={props.getDate}
                 />
             </form>
-            <Button variant="raised" onClick={props.showResults}>
-                {buttonText}
-            </Button>
+            <Route render={({history}) => (
+                <Button 
+                className={classes.Button}
+                    variant="raised" 
+                    onClick={() => {
+                        history.push('/');
+                        props.showResults();
+                    }
+                }>
+                    {buttonText}
+                </Button>
+            )}/>
         </div>
     )
 };

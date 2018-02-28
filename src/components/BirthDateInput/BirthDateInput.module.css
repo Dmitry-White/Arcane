@@ -8,8 +8,30 @@
     margin-right: 10px;
 }
 
-@media (max-width:850px){
+@media (max-width:920px){
     .Date {
         margin-bottom: 10px;
+    }
+}
+
+
+@media (max-width:420px){
+    .Date {
+        margin-bottom: 10px;
+        position: relative;
+        left: -20px;
+    }
+    .Button {
+        position: relative;
+        left: -20px;
+    }
+}
+
+@media (max-width:330px){
+    .Date {
+        left: 0;
+    }
+    .Button {
+        left: 0;
     }
 }

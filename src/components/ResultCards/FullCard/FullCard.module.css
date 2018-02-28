@@ -7,8 +7,13 @@
 }
 
 .Card {
-    padding: 12px;
+    padding: 0 12px 12px 12px;
     width: 70%;
+}
+
+.Close {
+    float: right;
+    left: 12px;
 }
 
 .Pic img{

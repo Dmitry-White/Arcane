@@ -1,6 +1,6 @@
 .Card {
     width: 300px;
-    margin: 0 30px;
+    margin: 10px 30px 0 30px;
     -webkit-transition-duration: 0.3s;
     transition-duration: 0.3s;
 }

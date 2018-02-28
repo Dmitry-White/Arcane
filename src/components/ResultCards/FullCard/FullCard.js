@@ -1,15 +1,23 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
 
 import classes from './FullCard.module.css';
 
 import Grid from 'material-ui/Grid';
 import Paper from 'material-ui/Paper';
+import IconButton from 'material-ui/IconButton';
 import Typography from 'material-ui/Typography';
+import CloseIcon from 'material-ui-icons/Close';
 
 const fullCard = props => {
     return (
         <div className={classes.FullCard}>
                     <Paper className={classes.Card}>
+                        <Route render={({history}) => (
+                            <IconButton onClick={() => {history.push('/')}} className={classes.Close} aria-label="Close">
+                                <CloseIcon />
+                            </IconButton>
+                        )}/>
                         <Grid container spacing={24}>
                             <Grid item xs className={classes.Pic}>
                                 <img alt="card" src={props.images[props.cardsInfo[props.selectedCard].id]} />

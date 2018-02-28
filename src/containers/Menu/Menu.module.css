@@ -1,4 +1,15 @@
 .Menu {
-    margin: 40px 10px 0 10px;
-    width: 95%;
+    padding: 40px 10px 0 10px;
+    width: 90%;
+}
+
+
+.Hidden {
+    padding: 0 !important;
+}
+
+@media (max-width:720px) {
+    .Hidden {
+        width: 0 !important;
+    }
 }

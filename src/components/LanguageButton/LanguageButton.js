@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import classes from './LanguageButton.module.css';
+
 import { InputLabel } from 'material-ui/Input';
 import { MenuItem } from 'material-ui/Menu';
 import { FormControl } from 'material-ui/Form';
@@ -28,7 +30,7 @@ class LanguageButton extends Component {
             rusText = "Русский";
         }
         return (
-            <form autoComplete="off">
+            <form autoComplete="off" className={classes.Lang}>
                 <FormControl>
                     <InputLabel htmlFor="controlled-open-select">{langText}</InputLabel>
                     <Select
