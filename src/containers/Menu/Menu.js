@@ -27,7 +27,16 @@ class Menu extends Component {
     };
 
     getDateHandler = event => {
-        if (event.target.value === "") {
+        if (event.target.value.length > 10) {
+            this.setState({
+                birthdate : {
+                    year: "yyyy",
+                    month: "mm",
+                    day: "dd",
+                },
+                dateError: true
+            })
+        } else if (event.target.value === "") {
             this.setState({
                 birthdate : {
                     year: "yyyy",
