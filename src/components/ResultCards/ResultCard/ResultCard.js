@@ -24,24 +24,26 @@ const resultCard = props => {
     };
     return (
         <Card className={classes.Card}>
-            <CardHeader
-                avatar={
-                    <Avatar aria-label="Recipe" style={{backgroundColor: props.cardColor}}>
-                        {props.cardNum}
-                    </Avatar>
-                }
-                title={props.title}
-                subheader={props.personType}
-            />
-            <CardMedia
-                className={classes.Media}
-                image={props.image}
-            />   
-            <CardContent>
-                <Typography component="p" align="justify">
-                    {cardDesc}
-                </Typography>
-            </CardContent>
+            <a href="/">
+                <CardHeader
+                    avatar={
+                        <Avatar aria-label="Recipe" style={{backgroundColor: props.cardColor}}>
+                            {props.cardNum}
+                        </Avatar>
+                    }
+                    title={props.title}
+                    subheader={props.personType}
+                />
+                <CardMedia
+                    className={classes.Media}
+                    image={props.image}
+                />   
+                <CardContent>
+                    <Typography component="p" align="justify">
+                        {cardDesc}
+                    </Typography>
+                </CardContent>
+            </a>
         </Card>
     )
 };

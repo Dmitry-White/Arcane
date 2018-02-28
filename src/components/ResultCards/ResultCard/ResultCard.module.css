@@ -1,6 +1,17 @@
 .Card {
     width: 300px;
     margin: 0 30px;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+
+.Card a {
+    text-decoration: none;
+}
+
+.Card:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 .Media {
