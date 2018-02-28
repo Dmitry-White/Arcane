@@ -1,6 +1,7 @@
 .FullCard {
     margin-top: 50px;
     width:100%;
+    height: 530px;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -14,6 +15,8 @@
 .Close {
     float: right;
     left: 12px;
+    top: 12px;
+    height: 0 !important;
 }
 
 .Pic img{
@@ -25,6 +28,12 @@
     min-width: 250px;
 }
 
+
+@media (max-width:790px) {
+    .FullCard {
+        height: auto;
+    }
+}
 
 @media (max-width:415px) {
     .Pic img{
