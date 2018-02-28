@@ -28,12 +28,17 @@ const birthDateInput = props => {
                     InputLabelProps={{
                         shrink: true,
                     }}
+                    onKeyPress={(e) => {
+                            const code = e.keyCode ? e.keyCode : e.which;
+                            if(code === 13) props.showResults();
+                        }
+                    }
                     onChange={props.getDate}
                 />
             </form>
             <Route render={({history}) => (
                 <Button 
-                className={classes.Button}
+                    className={classes.Button}
                     variant="raised" 
                     onClick={() => {
                         history.push('/');
