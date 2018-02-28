@@ -27,24 +27,35 @@ class Menu extends Component {
     };
 
     getDateHandler = event => {
-        const newYear = event.target.value.slice(0, 4);
-        const newMonth = event.target.value.slice(5, 7);
-        const newDay = event.target.value.slice(8, 10);
-        this.setState({
-            birthdate : {
-                year: newYear,
-                month: newMonth,
-                day: newDay,
-            },
-            dateError: false
-        })
+        if (event.target.value === "") {
+            this.setState({
+                birthdate : {
+                    year: "yyyy",
+                    month: "mm",
+                    day: "dd",
+                }
+            })
+        } else {
+            const newYear = event.target.value.slice(0, 4);
+            const newMonth = event.target.value.slice(5, 7);
+            const newDay = event.target.value.slice(8, 10);
+            this.setState({
+                birthdate : {
+                    year: newYear,
+                    month: newMonth,
+                    day: newDay,
+                },
+                dateError: false
+            })
+        };
+        
     };
 
     showResultsHander = () => {
         const day = Number(this.state.birthdate.day);
         const month = Number(this.state.birthdate.month);
         const year = Number(this.state.birthdate.year);
-        if (!(isNaN(day) || isNaN(month) || isNaN(year))) {
+        if (!(isNaN(day) || isNaN(month) || isNaN(year)))  {
             const firstArcana = this.computeFirstArcana(day);
             const secondArcana = this.computeSecondArcana(day, month, year);
             const thirdArcana = this.computeThirdArcana(day, month, year);

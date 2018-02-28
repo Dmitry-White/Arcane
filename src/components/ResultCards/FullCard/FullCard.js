@@ -31,7 +31,7 @@ const fullCard = props => {
                                     {props.cardsInfo[props.selectedCard].personType}
                                 </Typography>
                                 <br/>
-                                <Typography component="p">
+                                <Typography component="p" align="justify">
                                     {props.cardsInfo[props.selectedCard].fullDesc}
                                 </Typography>
                             </Grid>
