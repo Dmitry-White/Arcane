@@ -1,0 +1,29 @@
+.FullCard {
+    margin-top: 50px;
+    width:100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.Card {
+    padding: 12px;
+    width: 70%;
+}
+
+.Pic img{
+    width: 292px;
+    height: 500px;
+}
+
+.Text {
+    min-width: 250px;
+}
+
+
+@media (max-width:415px) {
+    .Pic img{
+        width: 175px;
+        height: 300px;
+    }
+}

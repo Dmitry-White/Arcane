@@ -20,6 +20,7 @@ const resultCards = props => {
                     image={props.images[props.cardsInfo[props.firstArcana].id]}
                     personType={props.cardsInfo[props.firstArcana].personType}
                     fullDesc={props.cardsInfo[props.firstArcana].fullDesc}
+                    selectCard={props.selectCard}
                 />
                 <ResultCard 
                     language={props.language}
@@ -30,6 +31,7 @@ const resultCards = props => {
                     image={props.images[props.cardsInfo[props.secondArcana].id]}
                     personType={props.cardsInfo[props.secondArcana].personType}
                     fullDesc={props.cardsInfo[props.secondArcana].fullDesc}
+                    selectCard={props.selectCard}
                 />
                 <ResultCard 
                     language={props.language}
@@ -40,6 +42,7 @@ const resultCards = props => {
                     image={props.images[props.cardsInfo[props.thirdArcana].id]}
                     personType={props.cardsInfo[props.thirdArcana].personType}
                     fullDesc={props.cardsInfo[props.thirdArcana].fullDesc}
+                    selectCard={props.selectCard}
                 />
             </div>
         )

@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom'
 
 import Grid from 'material-ui/Grid';
 
 import classes from './Menu.module.css';
 
 import BirthDateInput from '../../components/BirthDateInput/BirthDateInput';
-import LanguageButton from '../../components/LanguageButton/LanguageButton'
-import ResultCards from '../../components/ResultCards/ResultCards'
+import LanguageButton from '../../components/LanguageButton/LanguageButton';
+import ResultCards from '../../components/ResultCards/ResultCards';
+import FullCard from '../../components/ResultCards/FullCard/FullCard';
 
 class Menu extends Component {
     state = {
@@ -20,7 +22,8 @@ class Menu extends Component {
         computable: false,
         arcana_1: null,
         arcana_2: null,
-        arcana_3: null
+        arcana_3: null,
+        selectedCard: null
     };
 
     getDateHandler = event => {
@@ -107,6 +110,10 @@ class Menu extends Component {
         this.setState({language: event.target.value});
     };
 
+    selectCardHandler = cardNum => {
+        this.setState({selectedCard: cardNum});
+    }
+
     render() {
         return (
             <>
@@ -136,15 +143,26 @@ class Menu extends Component {
                         </Grid>
                     </Grid>
                 </div>
-                <ResultCards
-                    language={this.state.language} 
-                    computable={this.state.computable}
-                    images={this.props.images}
-                    cardsInfo={this.props.jsons[this.state.language]}
-                    firstArcana={this.state.arcana_1}
-                    secondArcana={this.state.arcana_2}
-                    thirdArcana={this.state.arcana_3}
-                />
+                <Route exact path="/" component={() => {
+                    return <ResultCards
+                        language={this.state.language} 
+                        computable={this.state.computable}
+                        images={this.props.images}
+                        cardsInfo={this.props.jsons[this.state.language]}
+                        firstArcana={this.state.arcana_1}
+                        secondArcana={this.state.arcana_2}
+                        thirdArcana={this.state.arcana_3}
+                        selectCard={this.selectCardHandler}
+                    />
+                }}/>
+
+                <Route path={"/" + this.state.selectedCard} component={() => {
+                    return <FullCard 
+                        selectedCard={this.state.selectedCard}
+                        images={this.props.images}
+                        cardsInfo={this.props.jsons[this.state.language]}
+                    />
+                }}/>                
             </>
         )
     };

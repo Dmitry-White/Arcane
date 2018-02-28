@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import classes from './ResultCard.module.css';
 
 import Card, { CardHeader, CardMedia, CardContent } from 'material-ui/Card';
@@ -23,8 +24,8 @@ const resultCard = props => {
         props.language === "eng" ? cardDesc = eng_thirdArcana : cardDesc = rus_thirdArcana;
     };
     return (
-        <Card className={classes.Card}>
-            <a href="/">
+        <Card className={classes.Card} onClick={() => props.selectCard(props.cardNum)}>
+            <Link to={"/" + props.cardNum}>
                 <CardHeader
                     avatar={
                         <Avatar aria-label="Recipe" style={{backgroundColor: props.cardColor}}>
@@ -43,7 +44,7 @@ const resultCard = props => {
                         {cardDesc}
                     </Typography>
                 </CardContent>
-            </a>
+            </Link>
         </Card>
     )
 };
