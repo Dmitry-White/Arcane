@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import classes from './FullCard.module.css';
 
@@ -13,11 +13,11 @@ const fullCard = props => {
     return (
         <div className={classes.FullCard}>
                     <Paper className={classes.Card}>
-                        <Route render={({history}) => (
-                            <IconButton onClick={() => {history.push('/')}} className={classes.Close} aria-label="Close">
+                        <Link to="/">
+                            <IconButton className={classes.Close} aria-label="Close">
                                 <CloseIcon />
                             </IconButton>
-                        )}/>
+                        </Link>
                         <Grid container spacing={24}>
                             <Grid item xs className={classes.Pic}>
                                 <img alt="card" src={props.images[props.cardsInfo[props.selectedCard].id]} />

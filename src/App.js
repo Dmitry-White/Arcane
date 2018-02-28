@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import classes from './App.module.css';
 import Menu from './containers/Menu/Menu';
-import { BrowserRouter } from 'react-router-dom'
+import { HashRouter } from 'react-router-dom'
 
 class App extends Component {
   
@@ -26,14 +26,14 @@ class App extends Component {
 
   render() {
     return (
-      <BrowserRouter>
+      <HashRouter>
         <div className={classes.App}>
           <Menu 
             images={this.images}
             jsons={this.jsons}
           />
         </div>
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 }

@@ -12,7 +12,7 @@ import FullCard from '../../components/ResultCards/FullCard/FullCard';
 
 class Menu extends Component {
     state = {
-        language: "eng",
+        language: "rus",
         birthdate: {
             day: "dd",
             month: "mm",

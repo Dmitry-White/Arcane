@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "file-loader": "^1.1.9",
+    "gh-pages": "^1.1.0",
     "material-ui": "^1.0.0-beta.35",
     "material-ui-icons": "^1.0.0-beta.35",
     "react": "^16.2.0",
@@ -12,6 +13,8 @@
     "react-scripts": "^2.0.0-next.47d2d941"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",

@@ -8,21 +8,19 @@
     margin-right: 10px;
 }
 
-@media (max-width:920px){
+
+@media (max-width:990px){
     .Date {
         margin-bottom: 10px;
     }
 }
 
-
 @media (max-width:420px){
     .Date {
-        margin-bottom: 10px;
         position: relative;
         left: -20px;
     }
     .Button {
-        position: relative;
         left: -20px;
     }
 }

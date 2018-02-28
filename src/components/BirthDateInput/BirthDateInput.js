@@ -18,23 +18,28 @@ const birthDateInput = props => {
     return (
         <div className={classes.Container}>
             <form className={classes.Date} noValidate>
-                <TextField
-                    id="date"
-                    type="date"
-                    label={labelText}
-                    defaultValue="yyyy-mm-dd"
-                    error={props.dateError}
-                    className={classes.TextField}
-                    InputLabelProps={{
-                        shrink: true,
-                    }}
-                    onKeyPress={(e) => {
-                            const code = e.keyCode ? e.keyCode : e.which;
-                            if(code === 13) props.showResults();
+                <Route render={({history}) => (
+                    <TextField
+                        id="date"
+                        type="date"
+                        label={labelText}
+                        defaultValue="yyyy-mm-dd"
+                        error={props.dateError}
+                        className={classes.TextField}
+                        InputLabelProps={{
+                            shrink: true,
+                        }}
+                        onKeyPress={(e) => {
+                                const code = e.keyCode ? e.keyCode : e.which;
+                                if(code === 13) {
+                                    history.push('/');
+                                    props.showResults();
+                                }
+                            }
                         }
-                    }
-                    onChange={props.getDate}
-                />
+                        onChange={props.getDate}
+                    />
+                )}/>
             </form>
             <Route render={({history}) => (
                 <Button 
