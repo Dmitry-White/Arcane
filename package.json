@@ -1,5 +1,6 @@
 {
   "name": "react-arcane",
+  "homepage": "https://dmitry-white.github.io/Arcana",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
