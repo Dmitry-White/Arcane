@@ -1,6 +1,6 @@
 # What's that?! A link?! How sudden!
-# [Beware, Russian inside](https://dmitry-white.github.io/Arcane/)
-# Translation in progress.
+### `[Beware, Russian inside](https://dmitry-white.github.io/Arcane/)`
+### `Translation in progress.`
 
 ## Table of Contents
 
