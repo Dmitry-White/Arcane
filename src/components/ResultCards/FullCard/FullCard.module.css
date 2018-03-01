@@ -30,12 +30,13 @@
 
 .Text {
     min-width: 250px;
+    padding: 20px !important;
     margin-right: 20px !important;
     margin-top: 20px !important;
 }
 
 
-@media (max-width:1000px) {
+@media (max-width:1030px) {
     .FullCard {
         height: auto;
     }
