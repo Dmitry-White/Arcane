@@ -19,6 +19,10 @@
     height: 0 !important;
 }
 
+.Pic {
+    margin: auto 0 !important;
+}
+
 .Pic img{
     width: 292px;
     height: 500px;
@@ -31,7 +35,7 @@
 }
 
 
-@media (max-width:790px) {
+@media (max-width:1000px) {
     .FullCard {
         height: auto;
     }
