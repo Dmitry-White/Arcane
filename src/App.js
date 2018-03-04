@@ -26,7 +26,7 @@ class App extends Component {
 
   render() {
     return (
-      <BrowserRouter>
+      <BrowserRouter basename="/Arcane">
         <div className={classes.App}>
           <Menu 
             images={this.images}
