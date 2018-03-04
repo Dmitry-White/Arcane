@@ -24,7 +24,7 @@ const birthDateInput = props => {
                         type="date"
                         autoFocus
                         label={labelText}
-                        defaultValue="yyyy-mm-dd"
+                        placeholder="yyyy-mm-dd"
                         error={props.dateError}
                         className={classes.TextField}
                         InputLabelProps={{
