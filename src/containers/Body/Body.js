@@ -6,7 +6,7 @@ import FullCard from '../../components/FullCard';
 
 class Body extends Component {
 
-    componentDidMount() {
+    componentWillMount() {
         window.scrollTo(0, 0);
     };
 
