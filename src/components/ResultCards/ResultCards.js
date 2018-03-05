@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './ResultCards.module.css';
 
-import ResultCard from './ResultCard/ResultCard';
+import ResultCard from './ResultCard/';
 import teal from 'material-ui/colors/teal';
 import amber from 'material-ui/colors/amber';
 import red from 'material-ui/colors/red';
