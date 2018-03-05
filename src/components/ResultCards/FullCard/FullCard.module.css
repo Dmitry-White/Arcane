@@ -13,10 +13,15 @@
 }
 
 .Close {
+    z-index: 100px;
     float: right;
     left: 12px;
     top: 12px;
     height: 0 !important;
+}
+
+@supports (-ms-ime-align:auto) {
+    .Close { top:24px; } 
 }
 
 .Pic {
