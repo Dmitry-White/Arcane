@@ -66,11 +66,8 @@ class Menu extends Component {
         const year = Number(this.state.birthdate.year);
         if (!(isNaN(day) || isNaN(month) || isNaN(year)))  {
             const firstArcana = this.computeFirstArcana(day);
-            console.log(firstArcana)
             const secondArcana = this.computeSecondArcana(day, month, year);
-            console.log(secondArcana)
             const thirdArcana = this.computeThirdArcana(day, month, year);
-            console.log(thirdArcana)
             this.setState({
                 computable: true,
                 arcana_1: firstArcana,
@@ -93,7 +90,6 @@ class Menu extends Component {
         const monthSum = this.sumOfDigits(month);
         const yearSum = this.sumOfDigits(year);
         sum = daySum + monthSum + yearSum;
-        console.log("Sum:", sum);
         while (sum > 22) {
             sum -= 22;
         }
