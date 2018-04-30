@@ -21,24 +21,16 @@ class App extends Component {
     selectedCard: null
   };
   
-  importIMG = r =>  {
-    let images = {};
+  importStuff = (r,slc) =>  {
+    let stuff = {};
     r.keys().forEach((item, index) => { 
-      images[item.replace('./', '').slice(0,-4)] = r(item);
+      stuff[item.replace('./', '').slice(0,slc)] = r(item);
     });
-    return images;
+    return stuff;
   };
 
-  importJSON = r =>  {
-    let jsons = {};
-    r.keys().forEach((item, index) => { 
-      jsons[item.replace('./', '').slice(0,3)] = r(item);
-    });
-    return jsons;
-  };
-
-  images = this.importIMG(require.context('./assets/images/', false, /\.(png|jpe?g|svg)$/));
-  jsons = this.importJSON(require.context('./assets/json/', false, /\.(json)$/));
+  images = this.importStuff(require.context('./assets/images/', false, /\.(png|jpe?g|svg)$/), -4);
+  jsons = this.importStuff(require.context('./assets/json/', false, /\.(json)$/),3);
 
   getDateHandler = event => {
       if (event.target.value.length > 10) {
