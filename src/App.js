@@ -7,7 +7,7 @@ import Body from './containers/Body';
 
 class App extends Component {
   state = {
-    language: "rus",
+    language: "eng",
     birthdate: {
         day: "dd",
         month: "mm",
